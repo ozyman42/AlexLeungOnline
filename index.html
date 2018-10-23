@@ -2,33 +2,7 @@
 <html>
     <head>
         <title>Alex's Resume</title>
-        <style>
-            html, body {
-                margin: 0;
-                padding: 0;
-            }
-        </style>
+        <meta http-equiv="refresh" content="0; URL='/Resume.pdf'" />
     </head>
-    <body>
-        <canvas id="rendering-canvas" style="border:1px  solid black"></canvas>
-        <script src="https://cdnjs.com/libraries/pdf.js"></script>
-        <script>
-            pdfjsLib.getDocument("./Resume.pdf").then(function onPDFFetched(pdf) {
-                pdf.getPage(1).then(function onPageRetreived(page) {
-                    var viewport = page.getViewport.scale(1.5);
-                    var canvas = document.getElementById("rendering-canvas");
-                    var context = canvas.getContext('2d');
-                    canvas.height = viewport.height;
-                    canvas.width = viewport.width;
-
-                    // render
-                    var renderContext = {
-                        canvasContext: context,
-                        viewport: viewport
-                    };
-                    page.render(renderContext);
-                });
-            });
-        </script>
-    </body>
+    <body></body>
 </html>
